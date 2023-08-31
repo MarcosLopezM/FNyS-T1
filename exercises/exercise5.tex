@@ -43,6 +43,44 @@
                 Nuevamente nos encontramos ante una interacción, \idest una colisión, por lo que omitimos la verificación de la conservación de la energía y únicamente nos toca hacerlo para la carga, el número bariónico y leptónico. Pero inmediatamente nos podemos dar cuenta que tanto del lado izquierdo como del derecho tenemos un barión y un leptón (de la misma familia), todos partículas, tal que \setulcolor{customBlue}\ul{el número bariónico y leptónico se conservan}.
 
                 Finalmente, analizamos la conservación de la carga. Del lado izquierdo tenemos que la carga para el protón es \(+1\e\) y para el electrón es \(-1\e\), que es 0 y, del lado derecho, la carga de ambas partículas es cero. Por lo tanto, \setulcolor{customBlue}\ul{la carga se conserva} y \setulcolor{pinkwave}\ul{la interacción es posible}.
+
+                Veamos entonces su diagrama de Feynman:
+
+                \begin{figure}[htb]
+                    \centering
+                    \begin{tikzpicture}
+                        \begin{feynman}
+                            % u -> u
+                            \vertex (q1) {\(u\)};
+                            \vertex [above right=of q1] (a);
+                            \vertex [right=of a] (q2) {\(u\)};
+                            % d -> d
+                            \vertex [below=0.5cm of q1] (q3) {\(d\)};
+                            \vertex [above right=of q3] (b);
+                            \vertex [right=of b] (q4) {\(d\)};
+                            % u -> d
+                            \vertex [below=0.5cm of q3] (q5) {\(u\)};
+                            \vertex [above right=of q5] (c);
+                            \vertex [right=of c] (q6) {\(d\)};
+                            % Weak interaction
+                            \vertex [below right=4em of c] (d);
+                            % electron and electronic neutrino
+                            \vertex [below left=of d] (f1) {\(\e^{-}\)};
+                            \vertex [right=of d] (f2) {\(\nu_{\e}\)};
+
+                            \diagram* {
+                                (q1) -- [fermion] (a) -- [fermion] (q2),
+                                (q3) -- [fermion] (b) -- [fermion] (q4),
+                                (q5) -- [fermion] (c) -- [fermion] (q6),
+                                (c) -- [scalar, edge label'=\(W^{+}\)] (d),
+                                (d) -- [anti fermion] (f1),
+                                (d) -- [fermion] (f2),
+                            };
+                        \end{feynman}
+                    \end{tikzpicture}                        
+                    \caption{Diagrama de Feynman para la colisión entre un protón y un electrón.}
+                    \label{fig:proton-electron-interaction}
+                \end{figure}
                 
                 \item \ch{\pi+ + n -> \pi+ + p}
                 
