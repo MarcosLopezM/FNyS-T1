@@ -9,6 +9,7 @@
 \usepackage{chemformula}
 \usepackage{derivative}
 \usepackage{empheq}
+\usepackage[es]{datetime2}
 \usepackage[inline]{enumitem}
 \usepackage{fancyhdr}
 % \usepackage[bottom]{footmisc}
@@ -171,6 +172,7 @@
 \newcommand*{\classname}{Física Nuclear y Subnuclear}
 \newcommand*{\homeworknumber}{Tarea 1}
 \newcommand*{\name}{Marcos López Merino}
+\DTMsavedate{duedate}{2023-08-31}
 
 % unit vector i
 \newcommand*{\uveci}{{\bm{\hat{\textnormal{\bfseries\i}}}}}
@@ -253,7 +255,7 @@
 % Portada
 \title{
     \textbf{\homeworknumber}\\
-    \normalsize\vspace{0.1in}\small{\textbf{Entrega}:~\today}
+    \normalsize\vspace{0.1in}\small{\textbf{Entrega}:~\DTMusedate{duedate}}
     \vspace{-1.5in}
 }
 \author{}
