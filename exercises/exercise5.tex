@@ -76,6 +76,11 @@
                                 (d) -- [anti fermion] (f1),
                                 (d) -- [fermion] (f2),
                             };
+
+                            \draw [decoration={brace}, decorate, blue] (q5.south west) -- (q1.north west)
+node [pos=0.5, left=0.3cm of q3] {\(p\)};
+                            \draw [decoration={brace}, decorate] (q2.north east) -- (q6.south east)
+                            node [pos=0.5, right=0.3cm of q4] {\(n\)};
                         \end{feynman}
                     \end{tikzpicture}                        
                     \caption{Diagrama de Feynman para la colisión entre un protón y un electrón.}
